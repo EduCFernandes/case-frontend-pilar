@@ -63,88 +63,90 @@ const MovieDetails = () => {
   return (
     <>
       <div className="w-screen h-[70vh] p-10 bg-slate-700 flex items-start justify-center text-gray-300 gap-4">
-        <div className="rounded-lg border border-slate-600 h-[450px] w-[300px] min-w-[300px] flex items-center justify-center">
-          {loadingMovie || fetchingMovie || refetchingMovie ? (
-            <Loader />
-          ) : (
-            <>
-              {movie && (
-                <img
-                  className="rounded-lg w-full min-h-[calc(150px*1.5)] object-cover"
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                  alt={`${movie.original_title} poster`}
-                />
-              )}
-            </>
-          )}
-        </div>
-        <div className="flex flex-col grow px-5">
-          {error ? (
-            <div className="flex items-center justify-center p-4 h-20 text-red-500">
-              <span className="font-semibold text-lg">
-                Error while fetching movie details
-              </span>
-            </div>
-          ) : (
-            <>
-              {loadingMovie || fetchingMovie || refetchingMovie ? (
-                <Loader />
-              ) : (
-                <>
-                  {movie ? (
-                    <>
-                      <h1 className="text-2xl font-semibold text-white">
-                        {movie.original_title}
-                        <span className="text-gray-300">
-                          {' '}
-                          ({moment(movie.release_date).format('YYYY')})
-                        </span>
-                      </h1>
-                      <div className="flex gap-2 mb-4">
-                        <span>
-                          {moment(movie.release_date).format('MM/DD/YYYY')} (
-                          {movie.origin_country})
-                        </span>
-                        -
-                        <span>
-                          {movie.genres
-                            .map((genre: Genre) => genre.name)
-                            .join(', ')}
-                        </span>
-                        -
-                        <span>
-                          {moment
-                            .utc(
-                              moment
-                                .duration(movie.runtime, 'minutes')
-                                .asMilliseconds()
-                            )
-                            .format('H[h] m[m]')}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <MovieRating rating={movie.vote_average} />
-                        <span>User Score</span>
-                      </div>
-                      <p className="italic text-teal-400 mb-4 mt-4">
-                        {movie.tagline}
-                      </p>
-                      <h3 className="text-xl text-white">Overview</h3>
-                      <p className="text-base">{movie.overview}</p>
-                      <div className="grid gap-4 grid-cols-3 mt-4">
-                        {credits?.crew.slice(0, 7).map((crew) => (
-                          <div className="flex flex-col">
-                            <span className="font-semibold">{crew.name}</span>
-                            <span>{crew.job}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </>
-                  ) : null}
-                </>
-              )}
-            </>
-          )}
+        <div className="container flex mx-auto">
+          <div className="rounded-lg border border-slate-600 h-[450px] w-[300px] min-w-[300px] flex items-center justify-center">
+            {loadingMovie || fetchingMovie || refetchingMovie ? (
+              <Loader />
+            ) : (
+              <>
+                {movie && (
+                  <img
+                    className="rounded-lg w-full min-h-[calc(150px*1.5)] object-cover"
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                    alt={`${movie.original_title} poster`}
+                  />
+                )}
+              </>
+            )}
+          </div>
+          <div className="flex flex-col grow px-5">
+            {error ? (
+              <div className="flex items-center justify-center p-4 h-20 text-red-500">
+                <span className="font-semibold text-lg">
+                  Error while fetching movie details
+                </span>
+              </div>
+            ) : (
+              <>
+                {loadingMovie || fetchingMovie || refetchingMovie ? (
+                  <Loader />
+                ) : (
+                  <>
+                    {movie ? (
+                      <>
+                        <h1 className="text-2xl font-semibold text-white">
+                          {movie.original_title}
+                          <span className="text-gray-300">
+                            {' '}
+                            ({moment(movie.release_date).format('YYYY')})
+                          </span>
+                        </h1>
+                        <div className="flex gap-2 mb-4">
+                          <span>
+                            {moment(movie.release_date).format('MM/DD/YYYY')} (
+                            {movie.origin_country})
+                          </span>
+                          -
+                          <span>
+                            {movie.genres
+                              .map((genre: Genre) => genre.name)
+                              .join(', ')}
+                          </span>
+                          -
+                          <span>
+                            {moment
+                              .utc(
+                                moment
+                                  .duration(movie.runtime, 'minutes')
+                                  .asMilliseconds()
+                              )
+                              .format('H[h] m[m]')}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <MovieRating rating={movie.vote_average} />
+                          <span>User Score</span>
+                        </div>
+                        <p className="italic text-teal-400 mb-4 mt-4">
+                          {movie.tagline}
+                        </p>
+                        <h3 className="text-xl text-white">Overview</h3>
+                        <p className="text-base">{movie.overview}</p>
+                        <div className="grid gap-4 grid-cols-3 mt-4">
+                          {credits?.crew.slice(0, 7).map((crew) => (
+                            <div className="flex flex-col">
+                              <span className="font-semibold">{crew.name}</span>
+                              <span>{crew.job}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    ) : null}
+                  </>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
       <div className="container py-4">
