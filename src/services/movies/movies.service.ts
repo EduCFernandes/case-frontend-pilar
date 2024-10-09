@@ -1,6 +1,11 @@
 import api from '@/core/api';
 import { Credit, MovieDetails } from '@/core/types/movie.types';
 
+export const searchMovies = async (query: string = '') => {
+  const res = await api.get('search/movie', { params: { query: query } });
+  return res.data;
+};
+
 export const getTrendingMovies = async () => {
   const res = await api.get('trending/movie/day');
   return res.data;

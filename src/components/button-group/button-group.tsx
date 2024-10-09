@@ -21,16 +21,16 @@ function ButtonGroup({
     <div className="flex rounded-lg border border-slate-200 w-fit overflow-hidden">
       {buttonsData.map((data: ButtonData) => {
         return (
-          <button
+          <div
             key={data.value}
             className={cn(
-              'px-2 text-sm',
+              'px-2 text-sm cursor-pointer',
               clsx({ 'bg-slate-800 text-white': selectedValue === data.value })
             )}
             onClick={() => onButtonClick(data.value)}
           >
             {data.label}
-          </button>
+          </div>
         );
       })}
     </div>

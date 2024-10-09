@@ -7,3 +7,11 @@
     --radius: 0.5rem;
   }
 }
+
+input {
+  @apply p-1 border rounded border-gray-300;
+}
+
+button {
+  @apply text-white bg-teal-400 rounded px-2;
+}

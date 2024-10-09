@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import Header from './ components/header/header';
+import Header from './components/header/header';
 import AppRoutes from './routes/routes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 

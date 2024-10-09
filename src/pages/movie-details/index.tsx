@@ -1,4 +1,4 @@
-import Loader from '@/ components/loader/loader';
+import Loader from '@/components/loader/loader';
 import {
   getMovieCredits,
   getMovieDetails
@@ -9,8 +9,8 @@ import { AxiosError } from 'axios';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import { Genre } from '@/core/types/movie.types';
-import MovieRating from '@/ components/movie-rating/movie-rating';
-import { Card } from '@/ components/card/card';
+import MovieRating from '@/components/movie-rating/movie-rating';
+import { Card } from '@/components/card/card';
 import user from '@/assets/user.svg';
 
 const MovieDetails = () => {

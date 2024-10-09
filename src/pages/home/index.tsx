@@ -1,9 +1,9 @@
 import ButtonGroup, {
   ButtonData
-} from '@/ components/button-group/button-group';
-import { Card } from '@/ components/card/card';
-import Loader from '@/ components/loader/loader';
-import MovieCard from '@/ components/movie-card/movie-card';
+} from '@/components/button-group/button-group';
+import { Card } from '@/components/card/card';
+import Loader from '@/components/loader/loader';
+import MovieCard from '@/components/movie-card/movie-card';
 import { Movie } from '@/core/types/movie.types';
 import {
   getTrendingMovies,
@@ -45,6 +45,14 @@ const Home = () => {
 
   return (
     <div className="container mx-auto flex flex-col gap-4 py-4">
+      <div className="flex gap-4">
+        <input
+          type="text"
+          placeholder="Search for a movie"
+          className="w-full"
+        />
+        <button>Search</button>
+      </div>
       <ButtonGroup
         buttonsData={filterButtons}
         onButtonClick={handleFilterChange}
