@@ -81,7 +81,9 @@ const Home = () => {
                     ))}
                   </div>
                 </>
-              ) : null}
+              ) : (
+                <h1 className="w-fit mx-auto text-xl p-5">No movies found!</h1>
+              )}
             </>
           )}
         </>
