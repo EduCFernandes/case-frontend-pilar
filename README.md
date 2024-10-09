@@ -4,6 +4,8 @@ This is a Front-End technical test for Pilar! This test is designed to create we
 
 ## Project Preview
 
+A demo of this project can be accessed at [https://case-frontend-pilar.vercel.app/](https://case-frontend-pilar.vercel.app/).
+
 ## Features
 
 - **List movies**: User can see a list of trending or popular movies at the home page.
