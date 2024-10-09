@@ -3,6 +3,7 @@ import { Card } from '../card/card';
 import { Link } from 'react-router-dom';
 import MovieRating from '../movie-rating/movie-rating';
 import moment from 'moment';
+import picture from '@/assets/picture.svg';
 
 interface MovieCardProps {
   movie?: Movie;
@@ -31,6 +32,9 @@ function MovieCard({ movie }: MovieCardProps) {
             className="rounded-lg w-full min-h-[calc(150px*1.5)] object-cover"
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={`${movie.original_title} poster`}
+            onError={(e) => {
+              e.currentTarget.src = picture;
+            }}
           />
         </Card>
       </Link>
