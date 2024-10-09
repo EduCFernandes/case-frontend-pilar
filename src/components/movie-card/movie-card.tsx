@@ -1,7 +1,5 @@
 import { Movie } from '@/core/types/movie.types';
 import { Card } from '../card/card';
-import { cn } from '@/helpers/cn';
-import { convertRatingToPercentage, getBorderColor } from '@/helpers/rating';
 import { Link } from 'react-router-dom';
 import MovieRating from '../movie-rating/movie-rating';
 
