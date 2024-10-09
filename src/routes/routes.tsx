@@ -1,4 +1,6 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import Home from '@/pages/home';
+import MovieDetails from '@/pages/movie-details';
+import { Route, Routes } from 'react-router-dom';
 
 enum RoutesPaths {
   HOME = '',
@@ -9,11 +11,11 @@ function AppRoutes() {
   const switchRouteElement = (route: string) => {
     switch (route) {
       case RoutesPaths.HOME:
-        return <></>;
+        return <Home />;
       case RoutesPaths.MOVIE_DETAILS:
-        return <></>;
+        return <MovieDetails />;
       default:
-        return <></>;
+        return <Home />;
     }
   };
 
@@ -29,7 +31,6 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/" />} />
       {privateRoutes()}
       <Route path="*" element={<></>} />
     </Routes>
