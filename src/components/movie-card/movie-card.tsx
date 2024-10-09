@@ -22,7 +22,7 @@ function MovieCard({ movie }: MovieCardProps) {
 
   return (
     <div className="flex flex-col gap-1" key={movie.id}>
-      <Link to={`movie/${movie.id}`}>
+      <Link to={`/movie/${movie.id}`}>
         <Card className="relative">
           <MovieRating
             rating={movie.vote_average}
@@ -38,7 +38,7 @@ function MovieCard({ movie }: MovieCardProps) {
           />
         </Card>
       </Link>
-      <Link to={`movie/${movie.id}`} className="mt-4">
+      <Link to={`/movie/${movie.id}`} className="mt-4">
         <h3 className="hover:text-blue-600">{movie.original_title}</h3>
         <span className="text-gray-400 text-xs">
           {moment(movie.release_date).format('MM/DD/YYYY')}
