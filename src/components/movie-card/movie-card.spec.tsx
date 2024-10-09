@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import MovieCard from './movie-card';
 import { Movie } from '@/core/types/movie.types';
+import moment from 'moment';
 
 describe('MovieCard component', () => {
   const mockMovie: Movie = {
@@ -31,7 +32,9 @@ describe('MovieCard component', () => {
       getByAltText(`${mockMovie.original_title} poster`)
     ).toBeInTheDocument();
     expect(getByText(mockMovie.original_title)).toBeInTheDocument();
-    expect(getByText(mockMovie.release_date)).toBeInTheDocument();
+    expect(
+      getByText(moment(mockMovie.release_date).format('MM/DD/YYYY'))
+    ).toBeInTheDocument();
   });
 
   test('renders no movie message when movie is not provided', () => {
