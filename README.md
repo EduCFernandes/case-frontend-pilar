@@ -75,7 +75,6 @@ src/
 - [Vite](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Moment](https://www.npmjs.com/package/moment)
 - [Lucide](https://lucide.dev/)
 
