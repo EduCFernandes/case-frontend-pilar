@@ -2,6 +2,7 @@ import { Movie } from '@/core/types/movie.types';
 import { Card } from '../card/card';
 import { Link } from 'react-router-dom';
 import MovieRating from '../movie-rating/movie-rating';
+import moment from 'moment';
 
 interface MovieCardProps {
   movie?: Movie;
@@ -35,7 +36,9 @@ function MovieCard({ movie }: MovieCardProps) {
       </Link>
       <Link to={`movie/${movie.id}`} className="mt-4">
         <h3 className="hover:text-blue-600">{movie.original_title}</h3>
-        <span className="text-gray-400 text-xs">{movie.release_date}</span>
+        <span className="text-gray-400 text-xs">
+          {moment(movie.release_date).format('MM/DD/YYYY')}
+        </span>
       </Link>
     </div>
   );
