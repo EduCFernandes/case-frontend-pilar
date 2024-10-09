@@ -9,6 +9,7 @@ A demo of this project can be accessed at [https://case-frontend-pilar.vercel.ap
 ## Features
 
 - **List movies**: User can see a list of trending or popular movies at the home page.
+- **Search movies**: User can search a movie.
 - **Toggle between popular and trending movies**: At the home page, the user can filter the movies by popular or trending.
 - **Movie details**: The user can navigate to a details page by clicking in one of the movie cards. In this page the user can see general information about the movie such as poster, title, rating, release date, cast and crew members.
 
