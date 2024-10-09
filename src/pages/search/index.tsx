@@ -9,7 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useSearchParams } from 'react-router-dom';
 
 const Search = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const query = searchParams.get('query') || '';
 
