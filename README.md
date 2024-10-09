@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# Pilar - Front-End Technical Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Front-End technical test for Pilar! This test is designed to create webpage that lists movies, where users can interact and access individual movie pages through cards.
 
-Currently, two official plugins are available:
+## Project Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **List movies**: User can see a list of trending or popular movies at the home page.
+- **Toggle between popular and trending movies**: At the home page, the user can filter the movies by popular or trending.
+- **Movie details**: The user can navigate to a details page by clicking in one of the movie cards. In this page the user can see general information about the movie such as poster, title, rating, release date, cast and crew members.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+To get started with the project, follow these steps:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone this repository to your local machine
+2. Navigate to the project directory: `cd case-frontend-pilar`
+3. Install dependencies by running `npm install`
+4. Create a .env file in the root of the project and add your api key as shown in the .env.example file
+
+## Usage
+
+To run the development server, execute the following command:
+
+```bash
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The app will be available at [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+To run tests, execute the following command:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run test
 ```
+
+## Backend API
+
+This project uses The Movie Database (TMDB) api to fetch movies. The documentation can be seen [here](https://developer.themoviedb.org/docs/getting-started)
+
+## Folder Structure
+
+```
+src/
+│   ├── assets/            # Static assets like images, icons and fonts
+│   ├── components/
+│   │   └── ...            # Reusable components
+│   ├── core/
+│   │   └── ...            # Global types and api instance
+│   ├── helpers/
+│   │   └── ...            # Helper functions that can be used anywhere in the project
+│   ├── pages/             # Route level pages
+│   │   ├── home/          # Home where where movies are shown
+│   │   │   └── ...
+│   │   └── movie-details/ # Movie details page where all information about the movie is shown
+│   │   │   └── ...
+│   ├── routes/
+│   │   └── routes.tsx     # Application routes
+│   ├── services/          # Any service the application migth consume
+│   ├── App.tsx            # App component
+│   ├── index.css          # Global stylesheet
+│   ├── main.tsx           # Entry point of the application
+│   ...
+```
+
+## Built With
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Vitest](https://vitest.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Moment](https://www.npmjs.com/package/moment)
+- [Lucide](https://lucide.dev/)
+
+## Author
+
+- [Eduardo Fernandes](https://github.com/EduCFernandes)
