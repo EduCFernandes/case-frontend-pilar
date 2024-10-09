@@ -1,9 +1,11 @@
 import Home from '@/pages/home';
 import MovieDetails from '@/pages/movie-details';
+import Search from '@/pages/search';
 import { Route, Routes } from 'react-router-dom';
 
 enum RoutesPaths {
   HOME = '',
+  SEARCH = 'search',
   MOVIE_DETAILS = 'movie/:movieId'
 }
 
@@ -12,6 +14,8 @@ function AppRoutes() {
     switch (route) {
       case RoutesPaths.HOME:
         return <Home />;
+      case RoutesPaths.SEARCH:
+        return <Search />;
       case RoutesPaths.MOVIE_DETAILS:
         return <MovieDetails />;
       default:
