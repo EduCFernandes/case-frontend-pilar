@@ -1,16 +1,22 @@
 import api from '@/core/api';
-
-export const getMovies = async () => {
-  const res = await api.get('discover/movie');
-  return res.data;
-};
+import { Credit, MovieDetails } from '@/core/types/movie.types';
 
 export const getTrendingMovies = async () => {
   const res = await api.get('trending/movie/day');
   return res.data;
 };
 
-export const getMovieDetails = async (id: string) => {
+export const getPopularMovies = async () => {
+  const res = await api.get('movie/popular');
+  return res.data;
+};
+
+export const getMovieDetails = async (id: string): Promise<MovieDetails> => {
   const res = await api.get(`movie/${id}`);
+  return res.data;
+};
+
+export const getMovieCredits = async (id: string): Promise<Credit> => {
+  const res = await api.get(`movie/${id}/credits`);
   return res.data;
 };

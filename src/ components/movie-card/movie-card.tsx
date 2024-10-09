@@ -3,6 +3,7 @@ import { Card } from '../card/card';
 import { cn } from '@/helpers/cn';
 import { convertRatingToPercentage, getBorderColor } from '@/helpers/rating';
 import { Link } from 'react-router-dom';
+import MovieRating from '../movie-rating/movie-rating';
 
 interface MovieCardProps {
   movie?: Movie;
@@ -23,14 +24,10 @@ function MovieCard({ movie }: MovieCardProps) {
     <div className="flex flex-col gap-1" key={movie.id}>
       <Link to={`movie/${movie.id}`}>
         <Card className="relative">
-          <div
-            className={cn(
-              'border-2 rounded-full flex items-center justify-center text-xs text-white bg-slate-700 p-2 absolute h-10 w-10 -bottom-5 left-3',
-              getBorderColor(convertRatingToPercentage(movie.vote_average))
-            )}
-          >
-            {convertRatingToPercentage(movie.vote_average)}
-          </div>
+          <MovieRating
+            rating={movie.vote_average}
+            className="-bottom-5 left-3 absolute"
+          />
           <img
             className="rounded-lg w-full min-h-[calc(150px*1.5)] object-cover"
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}

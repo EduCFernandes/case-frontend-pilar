@@ -1,4 +1,5 @@
 export enum MoviesQueries {
   LIST = 'LIST_MOVIES',
-  DETAILS = 'MOVIE_DETAILS'
+  DETAILS = 'MOVIE_DETAILS',
+  CREDITS = 'CREDITS'
 }

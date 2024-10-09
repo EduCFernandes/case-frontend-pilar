@@ -11,7 +11,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Header />
-        <div className="mt-[65px]">
+        <div className="mt-[65px] overflow-x-hidden">
           <AppRoutes />
         </div>
       </BrowserRouter>
