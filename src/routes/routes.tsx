@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 
 enum RoutesPaths {
   HOME = '',
-  MOVIE_DETAILS = 'movies/:movieId'
+  MOVIE_DETAILS = 'movie/:movieId'
 }
 
 function AppRoutes() {
