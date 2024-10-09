@@ -5,7 +5,7 @@ function Header() {
   return (
     <div
       data-testid="test-header"
-      className="h-[65px] px-10 bg-slate-800 fixed z-10 top-0 flex items-center w-screen text-white
+      className="h-[65px] bg-slate-800 fixed z-10 top-0 flex items-center w-screen text-white
       "
     >
       <div className="container flex items-center justify-between">
